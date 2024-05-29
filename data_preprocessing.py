@@ -138,7 +138,7 @@ def mod_pseudo_frame(pseudo_frame: pd.DataFrame):
     pseudo_frame.loc[pseudo_frame['carry_end_location'] != '', 'carry_end_location'] = 'ball_carry_to ' + (pseudo_frame['carry_end_location'])
 
     pseudo_frame.loc[pseudo_frame['clearance_body_part'] != '', 'clearance_body_part'] = pseudo_frame['clearance_body_part'].str.replace(' ', '_') + ' clearance'
-    # pseudo_frame.loc[pseudo_frame['dribble_nutmeg'] != '', 'dribble_nutmeg'] = 'nutmegged'
+    pseudo_frame.loc[pseudo_frame['dribble_nutmeg'] != '', 'dribble_nutmeg'] = 'nutmegged'
     pseudo_frame.loc[pseudo_frame['dribble_outcome'] != '', 'dribble_outcome'] = pseudo_frame['dribble_outcome'] + '_dribble'
 
     pseudo_frame.loc[pseudo_frame['duel_outcome'] != '', 'duel_outcome'] = 'Duel ' + pseudo_frame['duel_outcome'].str.replace(' ', '_')
